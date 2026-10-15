@@ -1,0 +1,6 @@
+THESIS: VPalestine prints Palestinian film and music like its film-week and concert posters: film in one silkscreen ink, music in the other, a third colour where they overprint. Refuses the dark streaming poster-grid and the festival-programme template.
+OWN-WORLD: White stock is the light (black stock at night, inks opaque on an underbase). Projector yellow, fuchsia, overprint red, key. Anybody set to each sheet's measure by width, Besley for reading. Photos as 45-degree halftones. Rank by sheet format; state by ink density (solid, tint, outline); the V strokes are the legend.
+STORY: Readers see tonight's film and tomorrow's record, plan the week from the handbill, follow festival runs, check dates ahead.
+FIRST VIEWPORT: Left 7/12, a yellow one-sheet: halftone Suleiman, three fitted title lines, deck, billing band. Right: fuchsia MC Abdul sleeve overprinting the one-sheet's edge in red. Directly under, the This week handbill as a day-column strip.
+FORM: Overprint, grounded candidate 3 of 7, seed 0b2cf4c5.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md

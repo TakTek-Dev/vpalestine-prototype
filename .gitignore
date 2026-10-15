@@ -1,0 +1,12 @@
+research/
+.impeccable/
+node_modules/
+__pycache__/
+# internal product and design records stay local
+PRODUCT.md
+DESIGN.md
+# downloaded but not printed on any page
+assets/img/photo/said-barenboim.webp
+assets/img/photo/barbican.webp
+assets/img/photo/quad.webp
+assets/img/photo/saleh-bakri.webp

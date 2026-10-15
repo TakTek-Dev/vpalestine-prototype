@@ -1,0 +1,431 @@
+/* VPalestine — Overprint.
+   Film prints in one screen, music in the other; where they overprint, a third colour belongs to both.
+   The stock is the light: white is always unprinted paper, never a card. Black stock = same screens, opaque, on a white underbase. */
+
+@font-face{font-family:Anybody;src:url(../fonts/anybody-var.woff2?v=1) format("woff2");font-weight:100 900;font-stretch:50% 150%;font-style:normal;font-display:swap}
+@font-face{font-family:Anybody;src:url(../fonts/anybody-italic-var.woff2?v=1) format("woff2");font-weight:100 900;font-stretch:50% 150%;font-style:italic;font-display:swap}
+@font-face{font-family:Besley;src:url(../fonts/besley-var.woff2?v=1) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:Besley;src:url(../fonts/besley-italic-var.woff2?v=1) format("woff2");font-weight:400 900;font-style:italic;font-display:swap}
+
+:root{
+  --stock:#FAFAF6;
+  --key:#16131A;
+  --key-2:#4A4451;
+  --film:#FFC20E;
+  --music:#D8137F;
+  --over:#D80F0C;
+  --on-film:#16131A;
+  --on-music:#FAFAF6;
+  --on-over:#FAFAF6;
+  --dot:#16131A;
+  --rule:color-mix(in oklab,var(--key) 24%,transparent);
+  --poster:Anybody,"Arial Narrow",sans-serif;
+  --text:Besley,Georgia,serif;
+  --gut:clamp(16px,2.2vw,32px);
+  --ov:clamp(28px,3.6vw,56px);
+  --pull:cubic-bezier(.62,0,.18,1);
+  --settle:cubic-bezier(.22,1.18,.36,1);
+  color-scheme:light;
+}
+:root[data-stock="black"]{
+  --stock:#121014;
+  --key:#F2EFE8;
+  --key-2:#B9B2BF;
+  --film:#FFC823;
+  --music:#FF3497;
+  --over:#FF3B26;
+  --on-music:#16131A;
+  --on-over:#16131A;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--stock);-webkit-text-size-adjust:100%;scrollbar-color:var(--key) var(--stock);scroll-padding-top:12px}
+body{background:var(--stock);color:var(--key);font:400 18px/1.55 var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip;font-variant-numeric:lining-nums}
+::selection{background:var(--film);color:var(--on-film)}
+img,canvas,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration-thickness:.07em;text-underline-offset:.18em}
+a:hover{text-decoration-thickness:.14em}
+:focus-visible{outline:3px solid var(--key);outline-offset:3px}
+.ink :focus-visible{outline-color:var(--on)}
+em{font-style:italic}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.skip{position:absolute;left:var(--gut);top:-60px;z-index:50;background:var(--key);color:var(--stock);font:700 15px/1 var(--poster);padding:12px 16px;text-decoration:none}
+.skip:focus{top:8px}
+
+/* ---------- inks ---------- */
+.ink{background:var(--ink);color:var(--on);position:relative}
+.ink-film{--ink:var(--film);--on:var(--on-film)}
+.ink-music{--ink:var(--music);--on:var(--on-music)}
+.ink-over{--ink:var(--over);--on:var(--on-over)}
+.ink-stock{--ink:var(--stock);--on:var(--key)}
+.ink{--on-2:color-mix(in oklab,var(--on) 80%,var(--ink))}
+/* on fuchsia and red the secondary voice stays at full strength: a lighter tint of white fails contrast there */
+.ink-music,.ink-over{--on-2:var(--on)}
+/* state is ink density: due prints as a halftone tint of its screen, gone as an outline */
+.st-due{--tint:var(--film);background-color:var(--stock);color:var(--key);--on:var(--key);--on-2:var(--key-2);
+  background-image:radial-gradient(circle,var(--tint) 0 .85px,transparent 1.2px),radial-gradient(circle,var(--tint) 0 .85px,transparent 1.2px);
+  background-size:5px 5px;background-position:0 0,2.5px 2.5px}
+.st-due.ink-music,.st-due .ink-music{--tint:color-mix(in oklab,var(--music) 70%,var(--stock))}
+.st-due.ink-over{--tint:color-mix(in oklab,var(--over) 70%,var(--stock))}
+.st-gone{background:var(--stock);color:var(--key);--on:var(--key);--on-2:var(--key-2);box-shadow:inset 0 0 0 3px var(--ink)}
+
+/* the V strokes are the desk legend: film = the left stroke, music = the right, both = the V */
+.vk{display:inline-block;width:.62em;height:.8em;flex:none;overflow:visible}
+.vk .f{fill:var(--film)}.vk .m{fill:var(--music)}.vk .o{fill:var(--over)}
+.vk.due .f{fill:url(#tint-f)}.vk.due .m{fill:url(#tint-m)}.vk.due .o{fill:url(#tint-o)}
+.vk.gone path{fill:none;stroke-width:90}.vk.gone .f{stroke:var(--film)}.vk.gone .m{stroke:var(--music)}.vk.gone .o{stroke:var(--over)}
+.ink.ink-film .vk .f,.ink.ink-music .vk .m{fill:var(--on)}
+.ink.ink-film .vk.due .f,.ink.ink-music .vk.due .m{fill:var(--on)}
+.ink.st-due .vk .f{fill:url(#tint-f)}.ink.st-due .vk .m{fill:url(#tint-m)}
+
+/* ---------- poster type ---------- */
+.lines{font:900 var(--size,64px)/.84 var(--poster);font-stretch:72%;text-transform:uppercase;letter-spacing:-.005em;font-kerning:normal}
+.lines a{text-decoration:none;display:block}
+.ln{display:block;white-space:nowrap;width:max-content;max-width:100%}
+.lines.fitted .ln{max-width:none}
+.lines:not(.fitted) .ln{white-space:normal;width:auto}
+.lines em{font-style:normal}
+.hed{font:800 clamp(19px,1.5vw,23px)/1.12 var(--poster);font-stretch:94%;letter-spacing:-.003em;text-wrap:balance}
+.hed a{text-decoration:none}
+.hed a:hover{text-decoration:underline;text-decoration-thickness:.1em}
+.copy{font:400 17px/1.55 var(--text);max-width:38em;text-wrap:pretty}
+.copy+.copy{margin-top:.7em}
+.label{font:650 12.5px/1.25 var(--poster);font-stretch:118%;letter-spacing:.045em;text-transform:uppercase}
+.band{display:flex;flex-wrap:wrap;gap:10px 28px;border-top:3px solid var(--on,var(--key));padding-top:10px;margin-top:18px}
+.band div{display:grid;gap:2px}
+.band dt{font:650 11.5px/1.2 var(--poster);font-stretch:120%;letter-spacing:.05em;text-transform:uppercase;color:var(--on-2,var(--key-2))}
+.band dd{font:750 16px/1.2 var(--poster);font-stretch:96%;font-variant-numeric:tabular-nums}
+.cap{font:italic 400 13.5px/1.4 var(--text);color:var(--on-2,var(--key-2));margin-top:8px;max-width:46em}
+.cap .cr{font-style:normal}
+.src{font:600 12px/1.45 var(--poster);font-stretch:108%;letter-spacing:.02em;color:var(--on-2,var(--key-2));margin-top:10px;position:relative;z-index:2}
+.src a{text-underline-offset:.2em}
+.ink .src a:hover{color:var(--on)}
+
+/* ---------- plates: halftone photographs ---------- */
+.plate{position:relative;overflow:hidden;background:var(--ink,var(--film));isolation:isolate}
+.plate img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;filter:contrast(1.08)}
+.plate canvas{position:absolute;inset:0;width:100%;height:100%}
+.plate.screened img{opacity:0}
+.plate.key{background:var(--stock)}
+:root[data-stock="black"] .plate.key img{mix-blend-mode:screen;filter:contrast(1.05)}
+
+/* ---------- masthead ---------- */
+.mast{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px 28px;padding:14px var(--gut) 12px;border-bottom:3px solid var(--key)}
+.mark{display:block;width:clamp(150px,13vw,196px)}
+.mark svg{width:100%;height:auto;overflow:visible}
+.mark .w{fill:var(--key)}
+.mark .f{fill:var(--film)}.mark .m{fill:var(--music)}.mark .o{fill:var(--over)}
+.mast nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:0 4px}
+.mast nav a{white-space:nowrap;display:flex;align-items:center;min-height:44px;padding:0 10px;font:700 13px/1 var(--poster);font-stretch:116%;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+.mast nav a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.dateline{font:650 12.5px/1.2 var(--poster);font-stretch:118%;letter-spacing:.05em;text-transform:uppercase;color:var(--key-2);white-space:nowrap}
+.mid{display:flex;align-items:center;gap:4px 18px;flex-wrap:wrap;justify-content:flex-end}
+.stock{white-space:nowrap;display:flex;align-items:center;gap:8px;min-height:44px;padding:0 4px 0 12px;background:none;border:0;color:inherit;cursor:pointer;font:700 12.5px/1 var(--poster);font-stretch:118%;letter-spacing:.05em;text-transform:uppercase}
+.stock .sw{display:flex;border:2px solid var(--key)}
+.stock .sw i{display:block;width:16px;height:20px}
+.stock .sw i:first-child{background:#FAFAF6}.stock .sw i:last-child{background:#121014}
+.stock[aria-pressed="false"] .sw i:first-child,.stock[aria-pressed="true"] .sw i:last-child{box-shadow:inset 0 -5px 0 var(--film)}
+.stock:hover .lbl{text-decoration:underline;text-underline-offset:5px}
+
+/* ---------- tonight: the one-sheet and the sleeve that overprints its edge ---------- */
+.tonight{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:stretch}
+.one{display:grid;grid-template-rows:auto 1fr}
+.one .plate{height:clamp(280px,40svh,440px)}
+.one .body{padding:20px calc(var(--gut) + var(--ov)) 24px var(--gut);display:flex;flex-direction:column}
+.one .lines{--size:clamp(50px,5.3vw,90px);margin-bottom:16px}
+.one .deck{font:400 clamp(18px,1.35vw,21px)/1.45 var(--text);max-width:36em;text-wrap:pretty;margin-bottom:18px}
+.one .band{margin-top:auto}
+.sleeve{margin-left:calc(var(--ov) * -1);display:flex;flex-direction:column;position:relative}
+/* the sleeve carries no background of its own: its screen is the ::before layer. On white stock that layer is multiplied,
+   so where it lands on the one-sheet the fuchsia prints over the yellow and the dots, and the red is real overprint.
+   On black stock inks are opaque, so the overprint is printed as its own screen. */
+.sleeve{background:transparent}
+.sleeve::before{content:"";position:absolute;inset:0;background:var(--music);mix-blend-mode:multiply;z-index:0}
+:root[data-stock="black"] .sleeve::before{background:linear-gradient(90deg,var(--over) 0 var(--ov),var(--music) var(--ov));mix-blend-mode:normal}
+.sleeve>*{position:relative;z-index:1}
+.sleeve .plate{margin-left:var(--ov);height:clamp(260px,44svh,470px);background:transparent}
+.sleeve .plate img{mix-blend-mode:multiply}
+.sleeve .txt{padding:18px var(--gut) 24px 22px;display:flex;flex-direction:column;flex:1}
+.sleeve .lines{--size:clamp(34px,3.3vw,58px);margin-bottom:12px}
+.sleeve .copy{font-size:17px}
+.sleeve .band{margin-top:auto}
+
+/* ---------- this week: the handbill, a column per day ---------- */
+.week{padding:clamp(40px,5vw,72px) var(--gut) 0}
+.wk-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:8px 32px;padding-bottom:12px;border-bottom:3px solid var(--key)}
+.wk-head h2{font:900 clamp(44px,5vw,80px)/.84 var(--poster);font-stretch:70%;text-transform:uppercase}
+.how{font:italic 400 15px/1.4 var(--text);color:var(--key-2);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.how span{display:inline-flex;align-items:center;gap:7px;font:650 12px/1 var(--poster);font-stretch:116%;letter-spacing:.04em;text-transform:uppercase;font-style:normal}
+.how .vk{width:12px;height:16px}
+.days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.day{padding:14px 20px 8px 0;border-right:1px solid var(--rule)}
+.day+.day{padding-left:20px}
+.day:last-child{border-right:0}
+.day h3{font:900 clamp(30px,2.6vw,42px)/1 var(--poster);font-stretch:66%;text-transform:uppercase;font-variant-numeric:tabular-nums;padding-bottom:10px}
+.day h3 span{color:var(--key-2)}
+.day ol{list-style:none}
+.day li{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:0 12px;padding:10px 0 12px;border-top:1px solid var(--rule)}
+.day li .vk{width:13px;height:17px;margin-top:2px}
+.day .t{font:650 12px/1.35 var(--poster);font-stretch:112%;letter-spacing:.03em;color:var(--key-2);text-align:right;max-width:7.5em;padding-top:3px}
+.day .w{font:700 16px/1.3 var(--poster);font-stretch:94%;text-wrap:balance}
+.day .w em{font-style:italic}
+.day .p{font:italic 400 14px/1.35 var(--text);color:var(--key-2);margin-top:3px}
+
+/* ---------- section heads ---------- */
+.sec{padding-top:clamp(56px,7vw,104px)}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,26em);gap:12px 48px;align-items:end;padding:0 var(--gut) 18px;border-bottom:3px solid var(--key)}
+.head h2{font:900 clamp(44px,6vw,96px)/.84 var(--poster);font-stretch:70%;text-transform:uppercase;letter-spacing:-.005em}
+.head p{font:400 16.5px/1.5 var(--text);color:var(--key-2);text-wrap:pretty}
+
+/* ---------- the wall: sheets abut; boundaries are ink changes or key rules ---------- */
+.wall{display:grid;grid-template-columns:repeat(12,minmax(0,1fr))}
+.wall>*{min-width:0}
+.sheet{padding:20px var(--gut) 22px;position:relative}
+.sheet .lines{--size:clamp(40px,4.2vw,72px);margin-bottom:12px}
+.sheet .hed{margin-bottom:8px}
+.ink-stock.sheet,.st-gone.sheet{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.stretch::after{content:"";position:absolute;inset:0;z-index:1}
+.sheet:has(.stretch:focus-visible){outline:3px solid var(--key);outline-offset:-3px}
+
+.half{grid-column:1/span 7;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);padding:0;align-items:stretch}
+.half .plate{min-height:420px}
+.half .txt{padding:20px var(--gut) 22px}
+.dates{list-style:none;margin-top:14px;border-top:1px solid color-mix(in oklab,var(--on) 35%,transparent)}
+.dates li{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:0 12px;padding:7px 0;border-bottom:1px solid color-mix(in oklab,var(--on) 35%,transparent);font:600 15px/1.3 var(--poster);font-stretch:96%}
+.dates b{font-weight:800;font-variant-numeric:tabular-nums;text-transform:uppercase}
+.dates span:last-child{font:italic 400 14px/1.3 var(--text);color:var(--on-2)}
+.window{grid-column:span 5;display:flex;flex-direction:column}
+.strip{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:8px 40px;align-items:end}
+.strip .lines{margin-bottom:0}
+.window .plate{height:clamp(170px,15vw,230px);margin:-20px calc(var(--gut) * -1) 16px}
+.lobby{grid-column:span 4}
+.lobby .plate{height:150px;margin:-20px calc(var(--gut) * -1) 14px}
+
+/* ---------- Doha: four films, one competition (tour-poster setting) ---------- */
+.doha{border-bottom:3px solid var(--key)}
+.doha .strip{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:0}
+.doha .top{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:12px 48px;align-items:end}
+.doha .top .lines{margin-bottom:0}
+.doha .strip figure{display:grid;grid-template-rows:minmax(0,1fr) auto;background:var(--film);--on:var(--on-film);--on-2:color-mix(in oklab,var(--on-film) 78%,var(--film))}
+.doha .strip .plate{height:clamp(220px,21vw,320px)}
+.doha .strip .cap{margin:0;padding:6px 14px 10px;font-size:12.5px}
+.doha .runs{padding:24px var(--gut) 26px}
+.doha .lines{--size:clamp(48px,5.4vw,92px)}
+.road-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}
+.doha .copy{color:var(--key-2)}
+.road-list{list-style:none;margin-top:22px}
+.road-list>li{padding:16px 0 18px;border-top:1px solid var(--rule)}
+.road-list .t{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.road-list .t b{font:850 clamp(24px,2.3vw,36px)/1 var(--poster);font-stretch:80%;text-transform:uppercase}
+.road-list .t span{font:italic 400 15px/1.3 var(--text);color:var(--key-2)}
+.road{display:flex;list-style:none;margin-top:14px;position:relative}
+.road::before{content:"";position:absolute;left:0;right:0;top:9px;height:6px;background:var(--film)}
+.due .road::before{background:radial-gradient(circle,var(--film) 0 1.6px,transparent 2px) 0 0/6px 6px}
+.road li{flex:1 1 0;position:relative;padding-top:26px;padding-right:10px;min-width:0}
+.road li::before{content:"";position:absolute;left:0;top:2px;width:11px;height:20px;background:var(--key);clip-path:polygon(0 0,100% 0,62% 100%,38% 100%)}
+.road li:last-child{flex-grow:1.2}
+.road b{display:block;font:850 15px/1.1 var(--poster);font-stretch:112%;letter-spacing:.04em;text-transform:uppercase}
+.road small{display:block;font:500 13.5px/1.3 var(--text);color:var(--key-2);margin-top:2px}
+.doha .band{margin-top:20px}
+
+/* ---------- the bridge: film x music. Two screens overlap; the title prints across the overprint ---------- */
+.bridge{position:relative;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:12px 40px;align-items:end;padding:38px var(--gut) 34px;margin-top:clamp(56px,7vw,104px);isolation:isolate}
+.bridge>i{position:absolute;top:0;bottom:0;z-index:-1}
+.bridge .b-film{left:0;width:62%;background:var(--film)}
+.bridge .b-music{right:0;width:60%;background:var(--music);mix-blend-mode:multiply}
+:root[data-stock="black"] .bridge .b-music{mix-blend-mode:normal;background:linear-gradient(90deg,var(--over) 0 36.7%,var(--music) 36.7%)}
+.bridge .b-title{color:var(--on-film)}
+.bridge .lines{--size:clamp(52px,7.2vw,124px)}
+.bridge .b-copy{color:var(--on-music);--on:var(--on-music);--on-2:var(--on-music)}
+.bridge .copy{font-size:17px;max-width:30em}
+.bridge .vk{width:28px;height:36px;margin-bottom:14px}
+.bridge .vk .f{fill:var(--on-film)}
+
+/* ---------- record ---------- */
+.gig.big{grid-column:1/span 6;grid-row:span 2;display:grid;grid-template-rows:auto 1fr;padding:0}
+.gig.big .plate{aspect-ratio:16/10}
+.gig.big .txt{padding:20px var(--gut) 22px}
+.gig.big .lines{--size:clamp(48px,5.6vw,96px)}
+.sleeve-s{grid-column:span 6;display:grid;grid-template-columns:minmax(150px,40%) minmax(0,1fr);padding:0}
+.sleeve-s{align-items:start}
+.sleeve-s .plate{aspect-ratio:1;background:var(--music)}
+.sleeve-s.st-gone .plate,.sleeve-s.st-due .plate{margin:3px 0 3px 3px}
+.sleeve-s .txt{padding:18px var(--gut) 20px 22px}
+.gig.small{grid-column:span 4}
+.gig.small .plate{height:170px;margin:-20px calc(var(--gut) * -1) 14px;background:var(--music)}
+.st-gone .plate{background:var(--music)}
+
+/* ---------- coming attractions: a tour-poster date list; each date is printed in its ink ---------- */
+.tour{list-style:none;columns:2 34em;column-gap:0;padding:0 calc(var(--gut) - 18px);column-rule:1px solid var(--rule)}
+.tour .row{break-inside:avoid;display:grid;grid-template-columns:clamp(104px,9vw,132px) minmax(0,1fr) 18px;gap:0 18px;align-items:center;padding:8px 18px;border-bottom:1px solid var(--rule)}
+.tour .row:nth-child(n){margin-right:0}
+.dt{background:var(--ink);color:var(--on);display:flex;flex-direction:column;justify-content:space-between;gap:6px;padding:10px 10px 9px;min-height:72px}
+.dt b{font:900 clamp(34px,3vw,46px)/.85 var(--poster);font-stretch:64%;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dt b.rng{font-size:clamp(28px,2.4vw,36px);font-stretch:58%}
+.dt small{font:750 12px/1 var(--poster);font-stretch:118%;letter-spacing:.06em;text-transform:uppercase}
+.row.due .dt{background:var(--stock);color:var(--key);background-image:radial-gradient(circle,var(--ink) 0 1.5px,transparent 1.9px),radial-gradient(circle,var(--ink) 0 1.5px,transparent 1.9px);background-size:6px 6px;background-position:0 0,3px 3px;box-shadow:inset 0 0 0 2px var(--ink)}
+.tour .what{font:750 17px/1.28 var(--poster);font-stretch:95%;text-wrap:balance}
+.tour .where{font:italic 400 14px/1.35 var(--text);color:var(--key-2);margin-top:3px}
+.tour .vk{width:15px;height:19px}
+.tour .year{break-inside:avoid;break-after:avoid;font:900 15px/1 var(--poster);font-stretch:120%;letter-spacing:.08em;text-transform:uppercase;padding:22px 18px 10px;margin:0 18px;padding-left:0;padding-right:0;display:flex;align-items:center;gap:12px;border-bottom:3px solid var(--key)}
+
+.pad{padding:16px var(--gut) 0}
+details.src summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font:700 12.5px/1 var(--poster);font-stretch:116%;letter-spacing:.04em;text-transform:uppercase;color:var(--key)}
+details.src p{max-width:80em}
+
+/* ---------- reissue: archive in the key plate only ---------- */
+.reissue{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);border-bottom:3px solid var(--key)}
+.reissue .big .plate{aspect-ratio:1920/1454}
+.reissue .big .cap{padding:0 var(--gut)}
+.reissue .txt{padding:24px var(--gut) 26px;border-left:1px solid var(--rule)}
+.reissue h3{font:900 clamp(38px,3.6vw,60px)/.88 var(--poster);font-stretch:74%;text-transform:uppercase;margin-bottom:16px}
+.reissue .pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
+.reissue .pair .plate{aspect-ratio:4/3}
+
+/* ---------- the Thursday bill ---------- */
+.signup{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:20px 48px;align-items:end;padding:34px var(--gut);background:var(--key);color:var(--stock);margin-top:clamp(56px,7vw,104px)}
+.signup h2{font:900 clamp(44px,5vw,84px)/.86 var(--poster);font-stretch:72%;text-transform:uppercase}
+.signup p{font:400 17px/1.5 var(--text);margin-top:12px;max-width:30em;color:color-mix(in oklab,var(--stock) 82%,var(--key))}
+.signup form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 0}
+.signup label{grid-column:1/-1;font:650 12.5px/1 var(--poster);font-stretch:118%;letter-spacing:.05em;text-transform:uppercase}
+.signup input{font:400 18px/1 var(--text);min-height:52px;padding:0 14px;border:3px solid var(--stock);border-right:0;background:var(--key);color:var(--stock);caret-color:var(--film);width:100%;border-radius:0}
+.signup input::placeholder{color:color-mix(in oklab,var(--stock) 62%,var(--key))}
+.signup input:focus-visible{outline:3px solid var(--film);outline-offset:0}
+.signup button{min-height:52px;padding:0 22px;background:var(--film);color:var(--on-film);border:3px solid var(--film);font:850 15px/1 var(--poster);font-stretch:112%;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:0}
+.signup button:hover{background:var(--stock);border-color:var(--stock);color:var(--key)}
+.signup .note{grid-column:1/-1;font:italic 400 13.5px/1.4 var(--text);color:color-mix(in oklab,var(--stock) 70%,var(--key))}
+.signup .note[data-state="sent"]{color:var(--film);font-style:normal}
+
+/* ---------- imprint: the foot of the poster ---------- */
+.imprint{padding:clamp(48px,6vw,88px) var(--gut) 28px}
+.imprint .foot-mark{display:block;width:100%}
+.imprint .foot-mark svg{width:100%;height:auto}
+/* printer's furniture: registration targets and the colour bar of the four inks and their tints */
+.furniture{display:flex;align-items:center;gap:16px;margin-top:22px}
+.reg{width:26px;height:26px;fill:none;stroke:var(--key);stroke-width:1.5}
+.bar{display:flex;flex:1;max-width:520px;height:18px}
+.bar i{flex:1}
+.c-film{background:var(--film)}.c-music{background:var(--music)}.c-over{background:var(--over)}.c-key{background:var(--key)}
+.bar .t{background:radial-gradient(circle,var(--c,var(--key)) 0 1.4px,transparent 1.8px) 0 0/5px 5px,var(--stock)}
+.bar .c-film.t{--c:var(--film)}.bar .c-music.t{--c:var(--music)}.bar .c-key.t{--c:var(--key)}
+.legend{display:flex;flex-wrap:wrap;gap:10px 26px;margin:22px 0 0;padding:14px 0;border-top:3px solid var(--key);border-bottom:1px solid var(--rule)}
+.legend span{display:inline-flex;align-items:center;gap:8px;font:700 12.5px/1 var(--poster);font-stretch:116%;letter-spacing:.05em;text-transform:uppercase}
+.legend .vk{width:15px;height:19px}
+.imprint .cols{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:28px 48px;margin-top:26px}
+.imprint .line{font:400 15.5px/1.55 var(--text);color:var(--key-2);max-width:32em}
+.imprint nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:0 18px;margin-top:14px}
+.imprint nav a{display:inline-flex;align-items:center;min-height:44px;font:700 12.5px/1 var(--poster);font-stretch:116%;letter-spacing:.05em;text-transform:uppercase}
+.credits{columns:2 22em;column-gap:40px;font:400 13.5px/1.45 var(--text);color:var(--key-2)}
+.credits h3{column-span:all;font:800 13px/1 var(--poster);font-stretch:116%;letter-spacing:.05em;text-transform:uppercase;color:var(--key);margin-bottom:10px}
+.credits p{break-inside:avoid;margin-bottom:6px}
+.legal{margin-top:28px;padding-top:12px;border-top:1px solid var(--rule);font:600 12px/1.5 var(--poster);font-stretch:110%;letter-spacing:.02em;color:var(--key-2)}
+
+/* ---------- the pull (first visit in a session): crop marks, then each screen in print order ---------- */
+.marks{position:fixed;inset:10px;pointer-events:none;z-index:40;opacity:0}
+.marks i{position:absolute;width:26px;height:26px;border:0 solid var(--key)}
+.marks i:nth-child(1){left:0;top:0;border-width:1.5px 0 0 1.5px}
+.marks i:nth-child(2){right:0;top:0;border-width:1.5px 1.5px 0 0}
+.marks i:nth-child(3){left:0;bottom:0;border-width:0 0 1.5px 1.5px}
+.marks i:nth-child(4){right:0;bottom:0;border-width:0 1.5px 1.5px 0}
+.pulling .marks{animation:marks 1.75s linear both}
+@keyframes marks{0%{opacity:0}10%{opacity:1}82%{opacity:1}100%{opacity:0}}
+.pulling .p-film{animation:pull-x .62s var(--pull) .18s both}
+.pulling .p-music::before{animation:pull-y .5s var(--pull) .72s both}
+.pulling .tonight .plate img{opacity:0}
+.pulling .p-key{animation:key-in .5s var(--settle) 1.18s both}
+.pulling .mast .mark .f{animation:pull-x .4s var(--pull) .05s both}
+.pulling .mast .mark .m{animation:pull-y .4s var(--pull) .25s both}
+.pulling .mast .mark .o{animation:fade .2s linear .5s both}
+.pulling .mast .mark .w{animation:key-in .45s var(--settle) .55s both}
+@keyframes pull-x{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes pull-y{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes key-in{0%{opacity:0;transform:translate(5px,-4px)}35%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+/* the squeegee edge travels with the film pull */
+.squeegee{position:fixed;top:0;bottom:0;left:0;width:3px;background:var(--key);z-index:41;pointer-events:none;opacity:0;transform:translateX(-10px)}
+.pulling .squeegee{animation:squeegee .62s var(--pull) .18s both}
+@keyframes squeegee{0%{opacity:1;transform:translateX(0)}96%{opacity:1}100%{opacity:0;transform:translateX(var(--pull-w,58vw))}}
+
+/* a sheet under the pointer jogs out of register and back: the key plate is its own screen */
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .sheet:hover .lines,.one:hover .lines,.sleeve:hover .lines,.tour .row:hover .dt b{animation:jog .42s var(--settle)}
+}
+@keyframes jog{0%{transform:none}30%{transform:translate(2.5px,-2px)}100%{transform:none}}
+
+/* swapping stock pulls the new stock across, like a print run changing paper */
+::view-transition-old(root){animation:none}
+::view-transition-new(root){animation:pull-x .7s var(--pull) both}
+
+@media (prefers-reduced-motion:reduce){
+  .pulling *,.pulling *::before{animation:none!important}
+  ::view-transition-new(root){animation:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .tonight{grid-template-columns:minmax(0,1fr)}
+  .one{padding-bottom:var(--ov)}
+  .one .plate{height:auto;aspect-ratio:16/10}
+  .one .body{padding-right:var(--gut)}
+  .sleeve{margin-left:0;margin-top:calc(var(--ov) * -1)}
+  :root[data-stock="black"] .sleeve::before{background:linear-gradient(180deg,var(--over) 0 var(--ov),var(--music) var(--ov))}
+  .sleeve .plate{margin-left:0;margin-top:var(--ov);height:auto;aspect-ratio:16/10}
+  .sleeve .txt{padding-left:var(--gut)}
+  .days{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .day:nth-child(2){border-right:0}
+  .day:nth-child(3){padding-left:0}
+  .head{grid-template-columns:minmax(0,1fr)}
+  .half{grid-column:1/-1;grid-row:auto}
+  .window{grid-column:span 6}
+  .lobby{grid-column:span 6}
+  .lobby:last-child{grid-column:1/-1}
+  .doha .top{grid-template-columns:minmax(0,1fr)}
+  .road-list{grid-template-columns:minmax(0,1fr)}
+  .bridge{grid-template-columns:minmax(0,1fr)}
+  .bridge .b-film{width:100%;bottom:38%}
+  .bridge .b-music{width:100%;top:46%}
+  :root[data-stock="black"] .bridge .b-music{background:linear-gradient(180deg,var(--over) 0 14.8%,var(--music) 14.8%)}
+  .bridge .b-copy{padding-top:24px}
+  .gig.big{grid-column:1/-1;grid-row:auto}
+  .sleeve-s{grid-column:1/-1}
+  .gig.small{grid-column:span 6}
+  .gig.small:last-child{grid-column:1/-1}
+  .reissue{grid-template-columns:minmax(0,1fr)}
+  .reissue .txt{border-left:0}
+  .signup{grid-template-columns:minmax(0,1fr)}
+  .imprint .cols{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+  body{font-size:17px}
+  .mast{grid-template-columns:1fr auto;padding-top:12px}
+  .mast .mid{grid-column:1/-1;grid-row:2;justify-content:flex-start}
+  .mast nav{order:2;width:100%;overflow-x:auto;scrollbar-width:none;margin:0 calc(var(--gut) * -1);padding:0 calc(var(--gut) - 10px)}
+  .mast nav ul{flex-wrap:nowrap}
+  .dateline{order:1}
+  .one .plate{aspect-ratio:4/3.4}
+  .one .lines{--size:clamp(40px,12.5vw,64px)}
+  .days{grid-template-columns:minmax(0,1fr)}
+  .day,.day+.day{padding:12px 0 4px;border-right:0}
+  .half{grid-template-columns:minmax(0,1fr)}
+  .half .plate{aspect-ratio:4/3;min-height:0}
+  .window,.lobby,.gig.small,.lobby:last-child,.gig.small:last-child{grid-column:1/-1}
+  .doha .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .doha .strip figure:first-child{grid-column:1/-1}
+  .road{flex-direction:column;gap:12px}
+  .road::before{left:3px;right:auto;top:0;bottom:0;width:6px;height:auto}
+  .road li{padding:0 0 0 26px}
+  .road li::before{left:0;top:3px;width:12px;height:16px}
+  .sleeve-s{grid-template-columns:minmax(0,1fr)}
+  .sleeve-s .plate{aspect-ratio:16/11}
+  .reissue .pair{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .signup form{grid-template-columns:minmax(0,1fr)}
+  .signup input{border-right:3px solid var(--stock)}
+  .tour{padding:0 var(--gut)}
+  .tour .row{grid-template-columns:92px minmax(0,1fr) 16px;gap:0 12px;padding:8px 0}
+  .tour .year{margin:0}
+  .dt b{font-size:34px}
+  .dt b.rng{font-size:27px}
+  .strip{grid-template-columns:minmax(0,1fr)}
+}
+
