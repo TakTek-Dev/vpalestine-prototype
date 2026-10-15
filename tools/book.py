@@ -138,20 +138,20 @@ def book():
 
     chapters.append(chapter('type', 'Set to the measure',
         'Poster type was chosen to fill the line. VPalestine does it with Anybody’s width axis: every title line is set, one by one, to the width of its sheet, '
-        'from width 58 for long lines to 128 for short ones, so a sheet’s lines are equal in length and different in width. Besley, a Clarendon, carries the reading.',
+        'from width 58 for long lines to 150 for short ones, so a sheet’s lines are equal in length and different in width. Besley, a Clarendon, carries the reading.',
         '<div class="type-demo"><label class="label" for="measure">Sheet width <output id="measure-out">100%</output></label>'
         '<input id="measure" type="range" min="34" max="100" value="100">'
         '<div class="measure-box ink ink-film" id="measure-box"><p class="lines" data-fit><span class="ln">Four films,</span><span class="ln">one</span><span class="ln">competition</span></p></div></div>'
         '<div class="specimens"><div class="spec"><p class="label">Anybody · titles, dates, bands, navigation</p>'
         '<p class="a1">Elia Suleiman</p><p class="a2">Day by Day, Shway Shway</p><p class="a3">THU 15 · 20:00 · TRIANON, ATHENS</p>'
-        '<p class="axis">' + ''.join(f'<span style="font-stretch:{w}%">V</span>' for w in (58, 72, 86, 100, 114, 128)) + '<i>width 58 → 128</i></p></div>'
+        '<p class="axis">' + ''.join(f'<span style="font-stretch:{w}%">V</span>' for w in (58, 76, 94, 112, 130, 150)) + '<i>width 58 → 150</i></p></div>'
         '<div class="spec"><p class="label">Besley · decks, story text, captions</p>'
         '<p class="b1">Hosam Abu Dan’s first fiction feature was filmed inside the Strip with a local cast and crew.</p>'
         '<p class="b2"><em>It Must Be Heaven</em> (2019) opens the Athens Palestine Film Festival at the Trianon at 20:00.</p>'
         '<p class="b3">Kamel El Basha, who stars in <em>Conversation With the Sea</em>, 23 October 2021.</p></div></div>'
         '<ul class="rules"><li><b>Titles</b> Anybody 850–900, all caps, set to the measure. Headlines that repeat a title in full sentence case use Anybody 800 at width 94.</li>'
         '<li><b>Bands</b> The billing block: labels in Anybody 650 at width 120, values in Anybody 750, tabular figures.</li>'
-        '<li><b>Reading</b> Besley 400 at 17–21 px, 1.45–1.55 leading, 38 em measure. Work titles in italics, always.</li></ul>'))
+        '<li><b>Reading</b> Besley 400 at 17–21 px, 1.45–1.55 leading, 38 em measure. Work titles in italics in running text; poster lines stay upright.</li></ul>'))
 
     pl = B.plate({'slug': 'el-basha', 'focus': (0.3, 0.42), 'zoom': 1.3, 'alt': 'Kamel El Basha seated before a lit dressing-room mirror'}, 'ink-film demo-plate', lpi=110)
     pl2 = B.plate({'slug': 'alhambra-jaffa', 'focus': (0.5, 0.45), 'alt': 'The Alhambra cinema in Jaffa, 1937'}, 'key demo-key', lpi=110)
@@ -256,7 +256,7 @@ def kit():
               'music': {'white': INK['music'], 'black': INK['music_d']},
               'overprint': {'white': INK['over'], 'black': INK['over_d'], 'note': 'film x music, multiplied on white stock'},
               'key': {'white': INK['key'], 'black': INK['key_d']},
-              'type': {'titles': 'Anybody 850-900, width set to the measure (58-128)', 'reading': 'Besley 400'}}
+              'type': {'titles': 'Anybody 850-900, width set to the measure (58-150)', 'reading': 'Besley 400'}}
     with zipfile.ZipFile(path, 'w', zipfile.ZIP_DEFLATED) as z:
         for f in sorted(os.listdir(os.path.join(ROOT, 'assets', 'brand'))):
             if f.endswith('.svg'):

@@ -10,7 +10,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import edition as E  # noqa: E402
 
-V = 7
+V = 10
 NEWS = {x['id']: x for x in json.load(open(os.path.join(ROOT, 'research', 'news.json'), encoding='utf-8'))}
 PHOTOS = json.load(open(os.path.join(ROOT, 'tools', 'out', 'photos.json'), encoding='utf-8'))
 MARKS = json.load(open(os.path.join(ROOT, 'tools', 'out', 'marks.json'), encoding='utf-8'))

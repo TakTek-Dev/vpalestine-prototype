@@ -103,10 +103,10 @@ code{font:600 .9em/1 var(--poster);font-stretch:110%;font-variant-numeric:tabula
 .pairs th,.pairs td{text-align:left;padding:10px 14px 10px 0;border-top:1px solid var(--rule);vertical-align:top}
 .pairs thead th{font:650 12px/1.2 var(--poster);font-stretch:116%;letter-spacing:.04em;text-transform:uppercase;color:var(--key-2)}
 .pairs tbody th{font:800 15px/1.3 var(--poster);font-stretch:94%}
-.pairs td{font-variant-numeric:tabular-nums}
+.pairs td{font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 
 /* type */
-.type-demo{display:grid;gap:10px;margin-bottom:34px}
+.type-demo{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin-bottom:34px}
 .type-demo input,.ht-ctl input{width:min(100%,560px);accent-color:var(--music);min-height:32px}
 .type-demo output,.ht-ctl output{font-variant-numeric:tabular-nums;color:var(--key)}
 .measure-box{width:100%;padding:22px var(--gut);transition:width .25s var(--pull)}
@@ -117,7 +117,7 @@ code{font:600 .9em/1 var(--poster);font-stretch:110%;font-variant-numeric:tabula
 .a1{font:900 clamp(44px,5vw,80px)/.9 var(--poster);font-stretch:66%;text-transform:uppercase}
 .a2{font:800 clamp(26px,2.4vw,36px)/1.05 var(--poster);font-stretch:94%;margin-top:10px}
 .a3{font:700 14px/1.3 var(--poster);font-stretch:118%;letter-spacing:.04em;margin-top:12px}
-.axis{display:flex;align-items:baseline;gap:6px;margin-top:20px;font:900 64px/1 var(--poster)}
+.axis{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;margin-top:20px;font:900 64px/1 var(--poster)}
 .axis i{font:600 12px var(--poster);font-stretch:116%;font-style:normal;letter-spacing:.04em;text-transform:uppercase;color:var(--key-2);margin-left:10px}
 .b1{font:400 clamp(22px,2vw,28px)/1.35 var(--text)}
 .b2{font:400 18px/1.55 var(--text);margin-top:14px}
@@ -127,7 +127,7 @@ code{font:600 .9em/1 var(--poster);font-stretch:110%;font-variant-numeric:tabula
 .ht{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px 48px;align-items:start}
 .ht-plates{display:grid;grid-template-columns:1.25fr 1fr;gap:0}
 .ht-plates .plate{aspect-ratio:4/5}
-.ht-ctl{display:grid;gap:10px}
+.ht-ctl{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
 
 /* formats */
 .formats{list-style:none;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0}

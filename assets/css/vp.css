@@ -13,7 +13,7 @@
   --key-2:#4A4451;
   --film:#FFC20E;
   --music:#D8137F;
-  --over:#D80F0C;
+  --over:#D80E07;
   --on-film:#16131A;
   --on-music:#FAFAF6;
   --on-over:#FAFAF6;
@@ -289,13 +289,13 @@ details.src p{max-width:80em}
 .signup p{font:400 17px/1.5 var(--text);margin-top:12px;max-width:30em;color:color-mix(in oklab,var(--stock) 82%,var(--key))}
 .signup form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 0}
 .signup label{grid-column:1/-1;font:650 12.5px/1 var(--poster);font-stretch:118%;letter-spacing:.05em;text-transform:uppercase}
-.signup input{font:400 18px/1 var(--text);min-height:52px;padding:0 14px;border:3px solid var(--stock);border-right:0;background:var(--key);color:var(--stock);caret-color:var(--film);width:100%;border-radius:0}
+.signup input{font:400 18px/1 var(--text);min-height:52px;padding:0 14px;border:3px solid var(--stock);border-right:0;background:var(--key);color:var(--stock);caret-color:var(--stock);width:100%;border-radius:0}
 .signup input::placeholder{color:color-mix(in oklab,var(--stock) 62%,var(--key))}
-.signup input:focus-visible{outline:3px solid var(--film);outline-offset:0}
+.signup input:focus-visible{outline:3px solid var(--stock);outline-offset:3px}
 .signup button{min-height:52px;padding:0 22px;background:var(--film);color:var(--on-film);border:3px solid var(--film);font:850 15px/1 var(--poster);font-stretch:112%;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:0}
 .signup button:hover{background:var(--stock);border-color:var(--stock);color:var(--key)}
 .signup .note{grid-column:1/-1;font:italic 400 13.5px/1.4 var(--text);color:color-mix(in oklab,var(--stock) 70%,var(--key))}
-.signup .note[data-state="sent"]{color:var(--film);font-style:normal}
+.signup .note[data-state="sent"]{color:var(--stock);font-style:normal;font-weight:600}
 
 /* ---------- imprint: the foot of the poster ---------- */
 .imprint{padding:clamp(48px,6vw,88px) var(--gut) 28px}
@@ -395,6 +395,12 @@ details.src p{max-width:80em}
   .reissue .txt{border-left:0}
   .signup{grid-template-columns:minmax(0,1fr)}
   .imprint .cols{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:420px){
+  /* on the narrowest phones the stock toggle keeps its swatches; its name stays for screen readers */
+  .stock .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .stock{padding-left:6px}
+  .mark{width:clamp(132px,40vw,160px)}
 }
 @media (max-width:760px){
   body{font-size:17px}

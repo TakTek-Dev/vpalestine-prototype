@@ -8,7 +8,7 @@ INK = {
     'stock': '#FAFAF6',     # white poster stock: the only white, never a card
     'film': '#FFC20E',      # film screen: projector yellow
     'music': '#D8137F',     # music screen: fuchsia
-    'over': '#D80F0C',      # film x music, multiplied: belongs to both
+    'over': '#D80E07',      # film x music, multiplied: belongs to both
     'key': '#16131A',       # key plate: type and halftone shadows
     # black stock
     'stock_d': '#121014',
