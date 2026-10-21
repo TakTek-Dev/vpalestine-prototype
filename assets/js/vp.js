@@ -79,7 +79,9 @@
     const sx = Math.min(Math.max((+fig.dataset.fx || 0.5) * iw - sw / 2, 0), iw - sw);
     const sy = Math.min(Math.max((+fig.dataset.fy || 0.5) * ih - sh / 2, 0), ih - sh);
     // screen ruling: coarser on big sheets, never under 3.2 css px
-    const cell = Math.max(3.2, Math.min(w / (+fig.dataset.lpi || 118), 8)) * dpr;
+    // small plates (thumbnails) screen finer so the subject survives; big sheets keep the coarse poster screen
+    const floor = w < 160 ? 1.9 : 3.2;
+    const cell = Math.max(floor, Math.min(w / (+fig.dataset.lpi || 118), 8)) * dpr;
     const gw = Math.ceil(W / cell) * 2, gh = Math.ceil(H / cell) * 2;
     const off = document.createElement('canvas'); off.width = gw; off.height = gh;
     const octx = off.getContext('2d', { willReadFrequently: true });

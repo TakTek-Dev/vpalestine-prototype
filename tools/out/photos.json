@@ -1,7 +1,7 @@
 {
  "suleiman": {
-  "w": 1920,
-  "h": 1277,
+  "w": 1200,
+  "h": 798,
   "file": "File:Počasno Srce Sarajeva Elia Suleiman.jpg",
   "author": "Adnasaida",
   "license": "CC BY-SA 4.0",
@@ -12,8 +12,8 @@
   "description": "Elia Suleiman receiving the Honorary Heart of Sarajevo (file is categorised under the 2024 Sarajevo Film Festival)."
  },
  "mc-abdul": {
-  "w": 960,
-  "h": 1587,
+  "w": 726,
+  "h": 1200,
   "file": "File:MC Abdul 2.jpg",
   "author": "FeaturingDallas",
   "license": "CC BY-SA 4.0",
@@ -24,8 +24,8 @@
   "description": "MC Abdul performs at UNRWA USA's Gaza 5k Fundraising event in Dallas 9-28-2024"
  },
  "coolidge": {
-  "w": 1280,
-  "h": 1931,
+  "w": 795,
+  "h": 1200,
   "file": "File:Coolidge Corner Theatre Marquee.jpg",
   "author": "Arisdoga",
   "license": "CC0",
@@ -36,8 +36,8 @@
   "description": "The Coolidge Corner Theatre marquee displaying film titles"
  },
  "gaza-port": {
-  "w": 1280,
-  "h": 853,
+  "w": 1200,
+  "h": 800,
   "file": "File:5M0A8322-01.jpg",
   "author": "Mohammed Masri",
   "license": "CC BY-SA 4.0",
@@ -48,8 +48,8 @@
   "description": "Gaza Sea Port, with the Marmara Memorial silhouted against the sky"
  },
  "el-basha": {
-  "w": 1280,
-  "h": 960,
+  "w": 1200,
+  "h": 900,
   "file": "File:Kamel elbasha.jpg",
   "author": "Ahmed Nader Mohamed",
   "license": "CC BY-SA 4.0",
@@ -60,8 +60,8 @@
   "description": "صورة شخصية للفنان كامل الباشا"
  },
  "yaqubi": {
-  "w": 1280,
-  "h": 1920,
+  "w": 800,
+  "h": 1200,
   "file": "File:Mohanad Yaqubi at the 79th Locarno Film Festival 01.jpg",
   "author": "Segolene Liger",
   "license": "CC BY-SA 4.0",
@@ -72,8 +72,8 @@
   "description": "Mohanad Yaqubi attends \"Frank & Louis\" red carpet during the 79th Locarno Film Festival on August 10, 2026 in Locarno, Switzerland."
  },
  "alkhatib": {
-  "w": 1280,
-  "h": 1320,
+  "w": 1164,
+  "h": 1200,
   "file": "File:Abdallah Alkhatib at Berlin Film Festival 2026, (P1230953).jpg",
   "author": "User:Celestinesucess",
   "license": "CC BY-SA 4.0",
@@ -84,8 +84,8 @@
   "description": "Abdallah Alkhatib at Berlin Film Festival 2026"
  },
  "odeh-directors": {
-  "w": 1280,
-  "h": 1919,
+  "w": 800,
+  "h": 1200,
   "file": "File:Sundance awards 2026 - Who Killed Alex Odeh - Jason Osder and William Lafi Youmans.jpg",
   "author": "Sarah K Joyce",
   "license": "CC BY-SA 4.0",
@@ -132,8 +132,8 @@
   "description": "Rasha Nahas performing at Womex 2024"
  },
  "jubran": {
-  "w": 1280,
-  "h": 914,
+  "w": 1200,
+  "h": 857,
   "file": "File:Kamilya Jubran with Oud in Cologne (8397).jpg",
   "author": "Raimond Spekking",
   "license": "CC BY-SA 4.0",
@@ -144,8 +144,8 @@
   "description": "Kamilya Jubran with Oud during a concert in the Domforum, Cologne, Germany"
  },
  "damascus-gate": {
-  "w": 1280,
-  "h": 960,
+  "w": 1200,
+  "h": 900,
   "file": "File:Damascus Gate IMG 3146.jpg",
   "author": "بدارين",
   "license": "CC BY-SA 4.0",
@@ -156,8 +156,8 @@
   "description": "The Damascus Gate is a key entrance to the Old City of Jerusalem, located on the northwest side and historically connecting the city to Nablus and Damascus. Its Arabic name, Bāb al-ʿĀmūd, refers to a Roman column that once stood behind the gate, while its modern English and Hebrew names reference its connection to Damascus and Shechem (Nablus)."
  },
  "alhambra-jaffa": {
-  "w": 1920,
-  "h": 1454,
+  "w": 1200,
+  "h": 909,
   "file": "File:Jaffa. Alhambra Cinema. Arab cinema in Jaffa 'Alhambra'. Entrance LOC matpc.17032.jpg",
   "author": "Matson Collection",
   "license": "Public domain",
@@ -180,8 +180,8 @@
   "description": "Front of Cinema Jenin. Arabic file description: Cinema Jenin, one of the prominent cultural landmarks in the Palestinian territories, long one of the largest screening halls in the West Bank, in the centre of Jenin."
  },
  "bakri": {
-  "w": 981,
-  "h": 1226,
+  "w": 960,
+  "h": 1200,
   "file": "File:Mohammad Bakri.jpg",
   "author": "Eman",
   "license": "Public domain",
@@ -191,21 +191,153 @@
   "place": "Multaka club, Be'er Sheva",
   "description": "Mohammad Bakri; image taken at the screening of \"Zahara\" at the Multaka club in Be'er Sheva"
  },
- "said-barenboim": {
-  "w": 1280,
-  "h": 864,
-  "file": "File:Edward Said and Daniel Barenboim in Sevilla, 2002.jpg",
-  "author": "Barenboim-Said Akademie gGmbH",
-  "license": "CC0",
-  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "page": "https://commons.wikimedia.org/wiki/File:Edward_Said_and_Daniel_Barenboim_in_Sevilla,_2002.jpg",
-  "date": "2002",
-  "place": "Seville, Spain",
-  "description": "The picture shows a meeting of Edward Said and Daniel Barenboim in Sevilla in 2002"
+ "mfa": {
+  "w": 1200,
+  "h": 900,
+  "file": "File:Museum of Fine Arts Boston, Huntington Ave entrance at night.jpg",
+  "author": "Kenneth C. Zirkel",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Museum_of_Fine_Arts_Boston,_Huntington_Ave_entrance_at_night.jpg",
+  "date": "2019-01-18 17:20:55",
+  "place": "Museum of Fine Arts, Huntington Avenue, Boston",
+  "description": "Museum of Fine Arts, Boston. Huntington Ave entrance at night"
+ },
+ "brattle": {
+  "w": 1200,
+  "h": 839,
+  "file": "File:BrattleTheatreC.JPG",
+  "author": "Biruitorul",
+  "license": "Public domain",
+  "license_url": null,
+  "page": "https://commons.wikimedia.org/wiki/File:BrattleTheatreC.JPG",
+  "date": "2008-07-19",
+  "place": "Brattle Theatre, Cambridge, Massachusetts",
+  "description": "Brattle Theatre, Cambridge, Massachusetts."
+ },
+ "lightbox": {
+  "w": 1200,
+  "h": 900,
+  "file": "File:Lightbox 2010-09-11 I.JPG",
+  "author": "Mathew5000",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lightbox_2010-09-11_I.JPG",
+  "date": "Taken on 11 September 2010",
+  "place": "TIFF Bell Lightbox, 350 King St W, Toronto",
+  "description": "TIFF Bell Lightbox, 350 King Street West, Toronto, one day before its official opening (11 September 2010). TIFF's headquarters; the file does not show a 2026 event."
+ },
+ "elgouna": {
+  "w": 1200,
+  "h": 586,
+  "file": "File:El Gouna R13.jpg",
+  "author": "Marc Ryckaert",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:El_Gouna_R13.jpg",
+  "date": "2009-03-15",
+  "place": "Abu Tig Marina, El Gouna, Egypt",
+  "description": "El Gouna (Egypt): Abu Tig Marina"
+ },
+ "jacir": {
+  "w": 1200,
+  "h": 802,
+  "file": "File:Annemarie Jacir at TIFF 2025.jpg",
+  "author": "Danielle G. Campbell",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Annemarie_Jacir_at_TIFF_2025.jpg",
+  "date": "2025-09-05",
+  "place": "Toronto International Film Festival, Toronto",
+  "description": "Annemarie Jacir at TIFF 2025."
+ },
+ "rami-alayan": {
+  "w": 1200,
+  "h": 800,
+  "file": "File:MMXXIII Mostra de València - A House in Jerusalem 01.jpg",
+  "author": "Francesc Fort",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:MMXXIII_Mostra_de_Val%C3%A8ncia_-_A_House_in_Jerusalem_01.jpg",
+  "date": "2023-10-21 20:13:22",
+  "place": "Mostra de Valencia 2023, Valencia, Spain",
+  "description": "Rami Alayan (co-writer) and Miley Locke (lead actress) presenting 'A House in Jerusalem' at the 2023 Mostra de Valencia. Rami Alayan co-wrote 'Conversation With the Sea'."
+ },
+ "ica": {
+  "w": 480,
+  "h": 640,
+  "file": "File:The Institute of Contemporary Arts, London entrance.jpg",
+  "author": "Fin Fahey",
+  "license": "CC BY-SA 2.5",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Institute_of_Contemporary_Arts,_London_entrance.jpg",
+  "date": "2006-01-14",
+  "place": "Institute of Contemporary Arts, The Mall, London",
+  "description": "Institute of Contemporary Arts, The Mall, Westminster, London."
+ },
+ "curzon-mayfair": {
+  "w": 900,
+  "h": 1200,
+  "file": "File:Curzon Cinema Mayfair, June 2023.jpg",
+  "author": "No Swan So Fine",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Curzon_Cinema_Mayfair,_June_2023.jpg",
+  "date": "2023-06-30",
+  "place": "Curzon Mayfair, Curzon Street, London",
+  "description": "Curzon Cinema Mayfair, June 2023\n\nThis is a photo of listed building number 1272023."
+ },
+ "festsaal": {
+  "w": 1200,
+  "h": 670,
+  "file": "File:20230916 xl 1534-Festsaal Kreuzberg.jpg",
+  "author": "Molgreen",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:20230916_xl_1534-Festsaal_Kreuzberg.jpg",
+  "date": "16 September 2023 (according to Exif data)",
+  "place": "Festsaal Kreuzberg, Am Flutgraben 2, Berlin",
+  "description": "Festsaal Kreuzberg (conference space in Berlin)"
+ },
+ "daboor": {
+  "w": 764,
+  "h": 954,
+  "file": "File:Daboor.jpg",
+  "author": "Hussein Bassal / Megaphone.news",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Daboor.jpg",
+  "date": "2023-07-28",
+  "place": "Not stated (still from a Megaphone video interview)",
+  "description": "Palestinian rapper Daboor during an interview with Megaphone (still from a YouTube video, 28 July 2023)."
+ },
+ "kasaba": {
+  "w": 1200,
+  "h": 1200,
+  "file": "File:Théâtre Al-Kasaba en 2017.jpg",
+  "author": "Djex93",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Th%C3%A9%C3%A2tre_Al-Kasaba_en_2017.jpg",
+  "date": "2017-01-08 17:15:26",
+  "place": "Al-Kasaba Theatre and Cinematheque, Ramallah",
+  "description": "Facade of the Al-Kasaba Theatre and Cinematheque, Ramallah, 2017. Venue image; no 15 Oct story is set there."
+ },
+ "rim-banna": {
+  "w": 948,
+  "h": 1200,
+  "file": "File:Rim Banna, Musikk for Gaza, Oslo (2014).jpg",
+  "author": "GGAADD",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rim_Banna,_Musikk_for_Gaza,_Oslo_(2014).jpg",
+  "date": "2014-09-03 19:20",
+  "place": "Musikk for Gaza concert, Oslo",
+  "description": "Rim Banna (1966-2018) singing at 'Musikk for Gaza', Oslo, 3 September 2014. Archive/history image; no 15 Oct story names her."
  },
  "barbican": {
-  "w": 1280,
-  "h": 2276,
+  "w": 675,
+  "h": 1200,
   "file": "File:Barbican Centre tower.jpg",
   "author": "JRennocks",
   "license": "CC BY 4.0",
@@ -216,8 +348,8 @@
   "description": "One of the three Brutalist residential towers of the Barbican Estate, London, which surrounds the Barbican Centre (file categorised under Barbican Estate)."
  },
  "quad": {
-  "w": 1280,
-  "h": 2276,
+  "w": 675,
+  "h": 1200,
   "file": "File:Quad Cinema W 13 St 2014-03-08 jeh.jpg",
   "author": "User:Jim.henderson",
   "license": "CC BY-SA 3.0",
@@ -227,9 +359,21 @@
   "place": "Quad Cinema, 34 West 13th Street, New York",
   "description": "Looking south at Quad Cinema 34 West 13 St on a sunny midday."
  },
+ "said-barenboim": {
+  "w": 1200,
+  "h": 810,
+  "file": "File:Edward Said and Daniel Barenboim in Sevilla, 2002.jpg",
+  "author": "Barenboim-Said Akademie gGmbH",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Edward_Said_and_Daniel_Barenboim_in_Sevilla,_2002.jpg",
+  "date": "2002",
+  "place": "Seville, Spain",
+  "description": "The picture shows a meeting of Edward Said and Daniel Barenboim in Sevilla in 2002"
+ },
  "saleh-bakri": {
-  "w": 1280,
-  "h": 855,
+  "w": 1200,
+  "h": 802,
   "file": "File:Saleh Bakri at TIFF 2025.jpg",
   "author": "Danielle G. Campbell",
   "license": "CC BY-SA 4.0",
@@ -238,5 +382,209 @@
   "date": "2025-09-05",
   "place": "Toronto International Film Festival, Toronto",
   "description": "Saleh Bakri at TIFF 2025."
+ },
+ "aljafari": {
+  "w": 960,
+  "h": 1200,
+  "file": "File:Director Kamal Aljafari at the 2025 Locarno Film Festival 00.jpg",
+  "author": "Walid Farouk",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Director_Kamal_Aljafari_at_the_2025_Locarno_Film_Festival_00.jpg",
+  "date": "2000-01-01 01:16:44",
+  "place": "Locarno Film Festival, Locarno, Switzerland",
+  "description": "Director Kamal Aljafari attends the 'The Dead of Winter' red carpet during the 78th Locarno Film Festival on August 08, 2025 in Locarno, Switzerland."
+ },
+ "mayasi": {
+  "w": 881,
+  "h": 1200,
+  "file": "File:Rakan Mayasi 8966M.jpg",
+  "author": "Day346",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rakan_Mayasi_8966M.jpg",
+  "date": "2026-08-22",
+  "place": "",
+  "description": "Rakan Mayasi in 2026"
+ },
+ "nai": {
+  "w": 574,
+  "h": 606,
+  "file": "File:Nai Barghouti (born 1996) interviewed by Ahotsa Info.png",
+  "author": "Ahotsa Info",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Nai_Barghouti_(born_1996)_interviewed_by_Ahotsa_Info.png",
+  "date": "2019-10-18",
+  "place": "",
+  "description": "Nai Barghouti (born 1996) interviewed by Ahotsa Info"
+ },
+ "saint-levant-live": {
+  "w": 1200,
+  "h": 800,
+  "file": "File:Saint Levant.jpg",
+  "author": "Matt Hrkac of Matt Hrkac Photography",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Saint_Levant.jpg",
+  "date": "2026-06-04 21:41:24",
+  "place": "Melbourne Town Hall, Melbourne (RISING festival)",
+  "description": "Saint Levant performing at Melbourne Town Hall, 4 June 2026, as part of the RISING arts festival"
+ },
+ "bfi": {
+  "w": 1200,
+  "h": 675,
+  "file": "File:BFI Southbank Dec 2021.jpg",
+  "author": "399scout",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:BFI_Southbank_Dec_2021.jpg",
+  "date": "2021-12-10 15:22:05",
+  "place": "BFI Southbank, South Bank, London",
+  "description": "BFI Southbank restaurant below the Waterloo Bridge with marquee advertising its Japan 2021 exhibition in December 2021."
+ },
+ "barbican-cinema": {
+  "w": 1200,
+  "h": 800,
+  "file": "File:Barbican Foyer.JPG",
+  "author": "Jknight1603",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Barbican_Foyer.JPG",
+  "date": "2012-02-23",
+  "place": "Barbican Centre, London",
+  "description": "Barbican Foyer Area - London"
+ },
+ "onassis": {
+  "w": 1200,
+  "h": 797,
+  "file": "File:Main Stage of the Onassis Cultural Centre (10).jpg",
+  "author": "StrangeTraveler",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Main_Stage_of_the_Onassis_Cultural_Centre_(10).jpg",
+  "date": "2018-12-09 20:06:55",
+  "place": "Onassis Stegi, Syngrou Avenue, Athens",
+  "description": "Η κεντρική σκηνή της Στέγης του Ιδρύματος Ωνάση."
+ },
+ "emst": {
+  "w": 1200,
+  "h": 800,
+  "file": "File:20211105 athenes228.jpg",
+  "author": "Jean Ηousen",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:20211105_athenes228.jpg",
+  "date": "2021-11-05 15:26:22",
+  "place": "EMST (former Fix brewery), Syngrou Avenue, Athens",
+  "description": "Vue du centre d'Athènes, en Grèce, le vendredi 5 novembre 2021."
+ },
+ "baird": {
+  "w": 960,
+  "h": 1151,
+  "file": "File:Maiken Baird - Headshot.jpg",
+  "author": "Terry Gruber",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Maiken_Baird_-_Headshot.jpg",
+  "date": "2018-03-14",
+  "place": "",
+  "description": "Headshot of Maiken Baird"
+ },
+ "said": {
+  "w": 559,
+  "h": 745,
+  "file": "File:Edward Said and Daniel Barenboim in Sevilla, 2002 (Said).jpg",
+  "author": "Barenboim-Said Akademie gGmbH",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Edward_Said_and_Daniel_Barenboim_in_Sevilla,_2002_(Said).jpg",
+  "date": "2021-03-14 00:55:09",
+  "place": "Seville, Spain",
+  "description": "The picture shows a meeting of Edward Said and Daniel Barenboim in Sevilla in 2002"
+ },
+ "jacir2": {
+  "w": 800,
+  "h": 1200,
+  "file": "File:Annemarie Jacir (3).jpg",
+  "author": "Segolene Liger",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Annemarie_Jacir_(3).jpg",
+  "date": "2025-12-05 16:16:22",
+  "place": "Red Sea International Film Festival, Jeddah",
+  "description": "Annemarie Jacir attends the \"Palestine 36\" screening at the 2025 Red Sea International Film Festival on December 05, 2025 in Jeddah, Saudi Arabia."
+ },
+ "eltahri": {
+  "w": 1060,
+  "h": 1200,
+  "file": "File:Jihan El-Tahri at the 2025 Locarno Film Festival (cropped).jpg",
+  "author": "Walid Farouk",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Jihan_El-Tahri_at_the_2025_Locarno_Film_Festival_(cropped).jpg",
+  "date": "2000-01-01 01:15:35",
+  "place": "Locarno Film Festival, Locarno, Switzerland",
+  "description": "Jihan El-Tahri attends the \"Le Pays d'Arto\" red carpet during the 78th Locarno Film Festival on August 06, 2025 in Locarno, Switzerland."
+ },
+ "rio": {
+  "w": 1200,
+  "h": 815,
+  "file": "File:The RIO Cinema Dalston.jpg",
+  "author": "Andrew Woodyatt",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:The_RIO_Cinema_Dalston.jpg",
+  "date": "2018-10-12 23:10:43",
+  "place": "Rio Cinema, Kingsland High Street, Dalston, London",
+  "description": "The RIO Cinema is a grade 2 listed art deco cinema in East London"
+ },
+ "riverside": {
+  "w": 1200,
+  "h": 900,
+  "file": "File:Riverside Studios (48243327676).jpg",
+  "author": "Matt Brown from London, England",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Riverside_Studios_(48243327676).jpg",
+  "date": "2019-07-02 16:39",
+  "place": "Riverside Studios, Hammersmith, London",
+  "description": "Riverside Studios"
+ },
+ "ica2": {
+  "w": 1200,
+  "h": 801,
+  "file": "File:Institute of Contemporary Arts - 17 May 2026.jpg",
+  "author": "Aethonatic",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Institute_of_Contemporary_Arts_-_17_May_2026.jpg",
+  "date": "2026-05-17 16:49",
+  "place": "Nash House, The Mall, London",
+  "description": "The Institute of Contemporary Arts in London."
+ },
+ "cine-lumiere": {
+  "w": 1200,
+  "h": 900,
+  "file": "File:The French Institute, Queensbury Place, South Kensington, July 2023 01.jpg",
+  "author": "No Swan So Fine",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:The_French_Institute,_Queensbury_Place,_South_Kensington,_July_2023_01.jpg",
+  "date": "2023-07-06",
+  "place": "Institut français, Queensberry Place, South Kensington, London",
+  "description": "The French Institute, Queensbury Place, South Kensington, July 2023\n\nThis is a photo of listed building number 1226079."
+ },
+ "bertha": {
+  "w": 1200,
+  "h": 900,
+  "file": "File:Brunswick Centre, September 2016 01.jpg",
+  "author": "Edwardx",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Brunswick_Centre,_September_2016_01.jpg",
+  "date": "2016-09-11 12:25:00",
+  "place": "Brunswick Centre, Bloomsbury, London",
+  "description": "Brunswick Centre, September 2016"
  }
 }

@@ -234,11 +234,7 @@ def book():
             '<li><a href="#halftone">Halftone</a></li><li><a href="#motion">Motion</a></li><li><a href="home.html">Homepage</a></li></ul></nav></div>'
             '<button class="stock" type="button" aria-pressed="false"><span class="lbl">Black stock</span><span class="sw" aria-hidden="true"><i></i><i></i></span></button></header>')
 
-    head = B.HEAD.format(V=V).replace(
-        '<title>VPalestine — Palestinian film and music · Thursday 15 October 2026</title>', '<title>VPalestine — Identity book</title>').replace(
-        '<meta name="description" content="Palestinian film and music, followed from premiere to audience: tonight Elia Suleiman opens Athens, tomorrow MC Abdul\'s first album.">',
-        '<meta name="description" content="The VPalestine identity: two silkscreen inks for film and music, the overprint where they meet, type set to the measure, photographs as halftones.">').replace(
-        f'<link rel="stylesheet" href="assets/css/vp.css?v={V}">', f'<link rel="stylesheet" href="assets/css/vp.css?v={V}">\n<link rel="stylesheet" href="assets/css/book.css?v={V}">')
+    head = B.head('VPalestine — Identity book', 'The VPalestine identity: two silkscreen inks for film and music, the overprint where they meet, type set to the measure, photographs as halftones.', css=('book.css',))
     html = (head + '<body id="top">\n<!--\n' + B.CONTRACT + '\n-->\n<a class="skip" href="#main">Skip to the book</a>' + B.DEFS
             + '<div class="marks" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="squeegee" aria-hidden="true"></div>'
             + mast + '<main id="main" class="book">' + cover + ''.join(chapters) + '</main>'
