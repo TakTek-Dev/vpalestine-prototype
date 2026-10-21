@@ -89,7 +89,8 @@ em{font-style:italic}
 .hed{font:800 clamp(19px,1.5vw,23px)/1.12 var(--poster);font-stretch:94%;letter-spacing:-.003em;text-wrap:balance}
 .hed a{text-decoration:none}
 .hed a:hover{text-decoration:underline;text-decoration-thickness:.1em}
-.copy{font:400 17px/1.55 var(--text);max-width:38em;text-wrap:pretty}
+.copy{font:400 17px/1.55 var(--text);max-width:38em;text-wrap:pretty;overflow-wrap:break-word}
+.hed,.cap,.src{overflow-wrap:break-word}
 .copy+.copy{margin-top:.7em}
 .label{font:650 12.5px/1.25 var(--poster);font-stretch:118%;letter-spacing:.045em;text-transform:uppercase}
 .band{display:flex;flex-wrap:wrap;gap:10px 28px;border-top:3px solid var(--on,var(--key));padding-top:10px;margin-top:18px}
@@ -167,6 +168,11 @@ em{font-style:italic}
 .day ol{list-style:none}
 .day li{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:0 12px;padding:10px 0 12px;border-top:1px solid var(--rule)}
 .day li .vk{width:13px;height:17px;margin-top:2px}
+.day li.has-th{grid-template-columns:56px minmax(0,1fr) auto}
+.day li .th{width:56px;height:56px}
+.day .w a{text-decoration:none}
+.day .w a:hover{text-decoration:underline;text-decoration-thickness:2px}
+.how a{font:700 12.5px/1 var(--poster);font-stretch:116%;letter-spacing:.04em;text-transform:uppercase}
 .day .t{font:650 12px/1.35 var(--poster);font-stretch:112%;letter-spacing:.03em;color:var(--key-2);text-align:right;max-width:7.5em;padding-top:3px}
 .day .w{font:700 16px/1.3 var(--poster);font-stretch:94%;text-wrap:balance}
 .day .w em{font-style:italic}
@@ -241,6 +247,9 @@ em{font-style:italic}
 .bridge .copy{font-size:17px;max-width:30em}
 .bridge .vk{width:28px;height:36px;margin-bottom:14px}
 .bridge .vk .f{fill:var(--on-film)}
+.bridge .b-plate{height:clamp(180px,16vw,260px);margin-bottom:16px;background:transparent}
+.bridge .b-plate img{mix-blend-mode:multiply}
+.bridge .cap{color:var(--on-music)}
 
 /* ---------- record ---------- */
 .gig.big{grid-column:1/span 6;grid-row:span 2;display:grid;grid-template-rows:auto 1fr;padding:0}
@@ -257,7 +266,10 @@ em{font-style:italic}
 .st-gone .plate{background:var(--music)}
 
 /* ---------- coming attractions: a tour-poster date list; each date is printed in its ink ---------- */
-.tour{list-style:none;columns:2 34em;column-gap:0;padding:0 calc(var(--gut) - 18px);column-rule:1px solid var(--rule)}
+.tour-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:0 calc(var(--gut) - 18px)}
+.tour-cols.one{grid-template-columns:minmax(0,1fr)}
+.tour-cols .tour+.tour{border-left:1px solid var(--rule)}
+.tour{list-style:none}
 .tour .row{break-inside:avoid;display:grid;grid-template-columns:clamp(104px,9vw,132px) minmax(0,1fr) 18px;gap:0 18px;align-items:center;padding:8px 18px;border-bottom:1px solid var(--rule)}
 .tour .row:nth-child(n){margin-right:0}
 .dt{background:var(--ink);color:var(--on);display:flex;flex-direction:column;justify-content:space-between;gap:6px;padding:10px 10px 9px;min-height:72px}
@@ -265,7 +277,7 @@ em{font-style:italic}
 .dt b.rng{font-size:clamp(28px,2.4vw,36px);font-stretch:58%}
 .dt small{font:750 12px/1 var(--poster);font-stretch:118%;letter-spacing:.06em;text-transform:uppercase}
 .row.due .dt{background:var(--stock);color:var(--key);background-image:radial-gradient(circle,var(--ink) 0 1.5px,transparent 1.9px),radial-gradient(circle,var(--ink) 0 1.5px,transparent 1.9px);background-size:6px 6px;background-position:0 0,3px 3px;box-shadow:inset 0 0 0 2px var(--ink)}
-.tour .what{font:750 17px/1.28 var(--poster);font-stretch:95%;text-wrap:balance}
+.tour .what{font:750 17px/1.32 var(--poster);font-stretch:95%;text-wrap:balance}
 .tour .where{font:italic 400 14px/1.35 var(--text);color:var(--key-2);margin-top:3px}
 .tour .vk{width:15px;height:19px}
 .tour .year{break-inside:avoid;break-after:avoid;font:900 15px/1 var(--poster);font-stretch:120%;letter-spacing:.08em;text-transform:uppercase;padding:22px 18px 10px;margin:0 18px;padding-left:0;padding-right:0;display:flex;align-items:center;gap:12px;border-bottom:3px solid var(--key)}
@@ -273,6 +285,12 @@ em{font-style:italic}
 .pad{padding:16px var(--gut) 0}
 details.src summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font:700 12.5px/1 var(--poster);font-stretch:116%;letter-spacing:.04em;text-transform:uppercase;color:var(--key)}
 details.src p{max-width:80em}
+
+/* ---------- thumbnails in date lists (also on the homepage) ---------- */
+.tour .row.has-th{grid-template-columns:clamp(104px,9vw,132px) 72px minmax(0,1fr) 18px}
+.tour .th{width:72px;height:72px}
+.tour .what a{text-decoration:none}
+.tour .what a:hover{text-decoration:underline;text-decoration-thickness:2px}
 
 /* ---------- reissue: archive in the key plate only ---------- */
 .reissue{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);border-bottom:3px solid var(--key)}
@@ -427,7 +445,14 @@ details.src p{max-width:80em}
   .reissue .pair{grid-template-columns:repeat(2,minmax(0,1fr))}
   .signup form{grid-template-columns:minmax(0,1fr)}
   .signup input{border-right:3px solid var(--stock)}
-  .tour{padding:0 var(--gut)}
+  .tour-cols{grid-template-columns:minmax(0,1fr);padding:0 var(--gut)}
+  .tour-cols .tour+.tour{border-left:0}
+  .tour-cols .tour+.tour .year[aria-hidden]{display:none}
+  .tour .row.has-th{grid-template-columns:66px 52px minmax(0,1fr) 14px;gap:0 10px}
+  .tour .th{width:52px;height:52px}
+  .tour .row.has-th .dt{padding:8px 7px 7px;min-height:64px}
+  .tour .row.has-th .dt b{font-size:30px}
+  .tour .row.has-th .dt b.rng{font-size:21px}
   .tour .row{grid-template-columns:92px minmax(0,1fr) 16px;gap:0 12px;padding:8px 0}
   .tour .year{margin:0}
   .dt b{font-size:34px}

@@ -1,0 +1,348 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//VPalestine//What is on//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:VPalestine dates
+BEGIN:VEVENT
+UID:vp-20261015-0@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:Jerusalem Festival final night: Irth and Iliya dabke troupes
+LOCATION:Yabous Cultural Centre\, Jerusalem
+DESCRIPTION:Yabous Cultural Centre\, Jerusalem · 20:00 local time
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261015-1@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261024
+SUMMARY:El Gouna Film Festival opens\; Who Killed Alex Odeh? in the line-up
+LOCATION:El Gouna Film Festival\, El Gouna
+DESCRIPTION:El Gouna Film Festival\, El Gouna
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261015-2@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:It Must Be Heaven opens the Athens Palestine Film Festival
+LOCATION:Trianon Cinema\, Athens
+DESCRIPTION:Trianon Cinema\, Athens · 20:00 local time
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261016-3@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:Edward Said: Between Worlds opens the 20th Boston Palestine Film Festival (sold out)
+LOCATION:Museum of Fine Arts\, Boston
+DESCRIPTION:Museum of Fine Arts\, Boston
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261016-4@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:Elia Suleiman\, The Time That Remains\, followed by a Q&amp\;A with Suleiman
+LOCATION:Trianon Cinema\, Athens
+DESCRIPTION:Trianon Cinema\, Athens · 21:00 local time
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261017-6@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:MC Abdul live
+LOCATION:Palestine Culture Day\, Redwood City
+DESCRIPTION:Palestine Culture Day\, Redwood City
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261017-7@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:Palescope 2: The Way Home\, six shorts
+LOCATION:Trianon Cinema\, Athens
+DESCRIPTION:Trianon Cinema\, Athens · 18:30 local time
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261018-8@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261019
+SUMMARY:Who Killed Alex Odeh?
+LOCATION:Museum of Fine Arts\, Boston
+DESCRIPTION:Museum of Fine Arts\, Boston
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261018-9@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261019
+SUMMARY:Elia Suleiman\, Divine Intervention
+LOCATION:Trianon Cinema\, Athens
+DESCRIPTION:Trianon Cinema\, Athens · 21:00 local time
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261019-11@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:Kamal Aljafari\, With Hasan in Gaza
+LOCATION:Coolidge Corner Theatre\, Brookline
+DESCRIPTION:Coolidge Corner Theatre\, Brookline
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261020-12@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261021
+SUMMARY:Traces of Home
+LOCATION:Brattle Theatre\, Cambridge
+DESCRIPTION:Brattle Theatre\, Cambridge
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261023-14@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:Chronicles from the Siege
+LOCATION:Museum of Fine Arts\, Boston
+DESCRIPTION:Museum of Fine Arts\, Boston
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261023-15@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:Habibi Hussein\, about Cinema Jenin’s last projectionist
+LOCATION:Trianon Cinema\, Athens
+DESCRIPTION:Trianon Cinema\, Athens · 19:00 local time
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261024-16@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:Saverio Costanzo’s Private\, a night for Mohammad Bakri with his family present
+LOCATION:Trianon Cinema\, Athens
+DESCRIPTION:Trianon Cinema\, Athens · 21:00 local time
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261024-17@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:Habibi Hussein and Yesterday the Eye Didn’t Sleep
+LOCATION:Coolidge Corner Theatre\, Brookline
+DESCRIPTION:Coolidge Corner Theatre\, Brookline
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261024-18@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:Who Killed Alex Odeh?
+LOCATION:Trianon Cinema\, Athens
+DESCRIPTION:Trianon Cinema\, Athens · 19:00 local time
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261024-19@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:Faraj Suleiman\, Faraj\, Piano and Mic\, his first fully solo show
+LOCATION:Horowitz Theatre\, Edmonton
+DESCRIPTION:Horowitz Theatre\, Edmonton
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261025-20@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+SUMMARY:Palestine Comedy Club closes the Boston Palestine Film Festival
+LOCATION:Coolidge Corner Theatre\, Brookline
+DESCRIPTION:Coolidge Corner Theatre\, Brookline
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261025-21@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+SUMMARY:Mohammad Bakri: A Cultural Legacy\, with Rashid Masharawi’s Haifa
+LOCATION:Trianon Cinema\, Athens
+DESCRIPTION:Trianon Cinema\, Athens · 20:00 local time
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261025-22@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+SUMMARY:Nai Barghouti\, Music of Palestine
+LOCATION:Shaw Auditorium\, HKUST\, Hong Kong
+DESCRIPTION:Shaw Auditorium\, HKUST\, Hong Kong · 19:30 local time
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261029-23@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261031
+SUMMARY:Larissa Sansour and Søren Lind\, A Sunken Tale of Losses Delayed
+LOCATION:Onassis Stegi\, Athens
+DESCRIPTION:Onassis Stegi\, Athens · 20:00 local time
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261029-24@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261101
+SUMMARY:Yesterday the Eye Didn’t Sleep
+LOCATION:Seminci\, Meeting Point\, Valladolid
+DESCRIPTION:Seminci\, Meeting Point\, Valladolid
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261030-25@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Who Killed Alex Odeh? opens in US cinemas
+LOCATION:Quad Cinema\; also Laemmle Glendale and Uprising Theater\, Chicago\, New York
+DESCRIPTION:Quad Cinema; also Laemmle Glendale and Uprising Theater\, Chicago\, New York
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261031-26@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:Elia Suleiman\, Chronicle of a Disappearance closes the run
+LOCATION:Onassis Stegi\, Athens
+DESCRIPTION:Onassis Stegi\, Athens · 20:00 local time
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261105-27@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261111
+SUMMARY:Who Killed Alex Odeh?\, in the city where the bombing happened
+LOCATION:The Frida Cinema\, Santa Ana
+DESCRIPTION:The Frida Cinema\, Santa Ana
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261113-29@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Who Is Still Alive opens the London Palestine Film Festival
+LOCATION:Barbican\, London
+DESCRIPTION:Barbican\, London
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261114-30@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:Who Killed Alex Odeh?\, UK premiere
+LOCATION:ICA\, London
+DESCRIPTION:ICA\, London
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261114-31@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:Rasha Nahas
+LOCATION:Festsaal Kreuzberg\, Berlin
+DESCRIPTION:Festsaal Kreuzberg\, Berlin
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261115-32@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Edward Said: Between Worlds\, with Maiken Baird
+LOCATION:Ciné Lumière\, London
+DESCRIPTION:Ciné Lumière\, London
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261116-33@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:From Ground Zero+: five shorts from Gaza
+LOCATION:Barbican\, London
+DESCRIPTION:Barbican\, London
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261118-34@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+SUMMARY:Habibi Hussein\, with a ScreenTalk
+LOCATION:Barbican\, London
+DESCRIPTION:Barbican\, London
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261119-35@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+SUMMARY:A Life in Cinema: A Tribute to Mohammad Bakri\, with Saleh Bakri
+LOCATION:Rio Cinema\, London
+DESCRIPTION:Rio Cinema\, London
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261119-36@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261128
+SUMMARY:Doha Film Festival: four Palestinian films in competition
+LOCATION:Doha Film Festival\, Doha
+DESCRIPTION:Doha Film Festival\, Doha
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261126-37@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261127
+SUMMARY:Concrete Land
+LOCATION:Bertha DocHouse\, London
+DESCRIPTION:Bertha DocHouse\, London
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261127-38@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Conversation With the Sea closes the London Palestine Film Festival
+LOCATION:Curzon Mayfair\, London
+DESCRIPTION:Curzon Mayfair\, London
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20261219-40@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:Saint Levant
+LOCATION:Dopa World\, Dubai
+DESCRIPTION:Dopa World\, Dubai
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20270123-42@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270124
+SUMMARY:Faraj Suleiman leads a 20-piece ensemble in a Ziad Rahbani tribute
+LOCATION:Barbican\, London
+DESCRIPTION:Barbican\, London
+END:VEVENT
+BEGIN:VEVENT
+UID:vp-20270319-44@vpalestine.prototype
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20270319
+DTEND;VALUE=DATE:20270320
+SUMMARY:Saint Levant’s North American leg opens\; Boston on 27 March is the first US date
+LOCATION:Afandi World Tour\, North America\, Ottawa
+DESCRIPTION:Afandi World Tour\, North America\, Ottawa
+END:VEVENT
+END:VCALENDAR

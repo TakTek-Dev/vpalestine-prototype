@@ -19,7 +19,7 @@ LEAD = {
     'band': [('Opens', 'Thu 15 Oct, 20:00 Athens time'), ('Where', 'Trianon Cinema, Athens'), ('Runs', '15–31 Oct · Trianon, EMST, Onassis Stegi')],
     'photo': {'slug': 'suleiman', 'focus': (0.64, 0.29), 'zoom': 2.6,
               'alt': 'Elia Suleiman, in a hat and dark suit, holding a framed award on a stage beside its presenter',
-              'caption': 'Elia Suleiman receives the Honorary Heart of Sarajevo, Sarajevo Film Festival, 2 July 2025.'},
+              'caption': 'Elia Suleiman receives the Honorary Heart of Sarajevo at the Sarajevo Film Festival, 2024.'},
     'src': ['athens-pff-2026-opens', 'suleiman-athens-retrospective'],
 }
 
@@ -38,7 +38,7 @@ SLEEVE = {
 
 # This week, in local time. day, time, place, what (HTML), desk, state, note
 BILL = [
-    ('Thu 15', 'all day', 'Jerusalem', 'Last scheduled day of the Jerusalem Festival', 'music', 'on', 'Yabous Cultural Centre'),
+    ('Thu 15', '20:00', 'Jerusalem', 'Jerusalem Festival final night: a dabke double bill', 'music', 'on', 'Yabous Cultural Centre'),
     ('Thu 15', 'opening', 'El Gouna', 'El Gouna Film Festival opens; <em>Who Killed Alex Odeh?</em> is in the line-up', 'film', 'on', 'to 23 Oct'),
     ('Thu 15', '20:00', 'Athens', '<em>It Must Be Heaven</em> opens the Athens Palestine Film Festival', 'film', 'on', 'Trianon'),
     ('Fri 16', 'opening', 'Boston', '<em>Edward Said: Between Worlds</em> opens the 20th Boston Palestine Film Festival', 'film', 'on', 'MFA · sold out'),
@@ -85,6 +85,8 @@ CIRCUIT = [
              'push them and their animals off their land in Jordan. It is in the BFI London Film Festival’s Documentary Competition; '
              'Abdallah Al-Khatib’s <em>Chronicles from the Siege</em> plays in the Dare strand.',
      'band': [('Awards', 'Sun 18 Oct'), ('Festival', '70th BFI London Film Festival')],
+     'photo': {'slug': 'ica', 'focus': (0.5, 0.45), 'alt': 'The entrance of the Institute of Contemporary Arts on the Mall, London',
+               'caption': 'The ICA on the Mall, London, 14 January 2006, where the festival showed <em>Revolutionaries Never Die</em> on 12 October.'},
      'src': ['lff-2026-palestinian-titles', 'concrete-land']},
     {'id': 'siege', 'desk': 'film', 'state': 'on', 'fmt': 'lobby',
      'title': 'Chronicles from the Siege, from Berlin to Boston',
@@ -102,6 +104,7 @@ CIRCUIT = [
      'text': 'Rakan Mayasi’s debut, first shown in Cannes’ Un Certain Regard, is one of 18 films in Rome’s Progressive Cinema '
              'competition. Then Valladolid’s Seminci, 29 to 31 October.',
      'band': [('Rome', '13–25 Oct'), ('Runtime', '101′')],
+     'photo': {'slug': 'mayasi', 'focus': (0.5, 0.3), 'alt': 'Rakan Mayasi', 'caption': 'Rakan Mayasi, 22 August 2026.'},
      'src': ['rome-ff-yesterday-eye']},
     {'id': 'dc', 'desk': 'film', 'state': 'due', 'fmt': 'strip',
      'title': 'Washington’s festival turns fifteen next week',
@@ -152,6 +155,8 @@ BRIDGE = {
             'follows Gaza’s first rock band as it tries to record an album. Filmmaker Jihan El-Tahri told TimesLIVE that 22 short films '
             'were made in Gaza on mobile phones during the war.',
     'band': [('Project', 'Echoes of the Unsung'), ('Showcase', 'Palestine Film Hub, Durban FilmMart')],
+    'photo': {'slug': 'eltahri', 'focus': (0.5, 0.32), 'alt': 'Jihan El-Tahri on the red carpet at Locarno',
+              'caption': 'Jihan El-Tahri, who spoke for the showcase, at the Locarno Film Festival, 6 August 2025.'},
     'src': ['pfi-durban-showcase'],
 }
 
@@ -161,8 +166,8 @@ RECORD = [
      'lines': ['Jerusalem,', 'last night'],
      'text': 'Back on 16 August after a pause since 2023, the festival opened with the Jerusalem Arabic Music Ensemble’s tribute to '
              'Ziad Rahbani and ran two months of concerts, talks and exhibitions across East Jerusalem. Yabous chairman Suheil Khoury '
-             'said it returned to give people hope. No report of the closing event yet.',
-     'band': [('Ends', 'Thu 15 Oct'), ('Run by', 'Yabous Cultural Centre')],
+             'said it returned to give people hope. Tonight’s final night at Yabous is a dabke double bill: the Irth troupe’s <em>Irth Baqin</em> and the Iliya Palestine Youth troupe’s <em>Searching for Zarif</em>.',
+     'band': [('Final night', 'Thu 15 Oct, 20:00'), ('Where', 'Yabous Cultural Centre, Al-Zahra Street'), ('Edition', '30th')],
      'photo': {'slug': 'damascus-gate', 'focus': (0.52, 0.36), 'zoom': 1.25,
                'alt': 'Damascus Gate in Jerusalem’s Old City, its stone walls and steps in daylight',
                'caption': 'Damascus Gate, Jerusalem’s Old City, 8 November 2022.'},
@@ -174,9 +179,9 @@ RECORD = [
              'at The Wiltern in Los Angeles this week, moved to spring 2027 after his US visa went to further checks: Ottawa on 19 March, '
              'Boston on 27 March. His song with Tul8te, <em>Nano</em>, topped Spotify in Egypt.',
      'band': [('Album', 'out 21 Aug'), ('North America', 'from 19 Mar 2027')],
-     'photo': {'slug': 'saint-levant', 'focus': (0.5, 0.3),
-               'alt': 'Saint Levant singing into a microphone, one arm raised, at an outdoor concert',
-               'caption': 'Saint Levant in Madrid, 22 July 2025.'},
+     'photo': {'slug': 'saint-levant-live', 'focus': (0.5, 0.4),
+               'alt': 'Saint Levant performing on stage at Melbourne Town Hall',
+               'caption': 'Saint Levant at Melbourne Town Hall, RISING festival, 4 June 2026.'},
      'src': ['saint-levant-tour-postponed', 'national-best-arabic-songs']},
     {'id': 'rasha-nahas', 'desk': 'music', 'state': 'due', 'fmt': 'sleeve',
      'title': 'Rasha Nahas: the single is out, the album isn’t yet',
@@ -206,6 +211,7 @@ RECORD = [
      'text': 'The singer and flautist closes HKUST’s Cosmopolis Festival with original songs and arrangements of classic Arabic repertoire, '
              'jazz and Western classical music. She sings on MC Abdul’s <em>Wait for Me</em>.',
      'band': [('Sun 25 Oct', '19:30, Shaw Auditorium')],
+     'photo': {'slug': 'nai', 'focus': (0.5, 0.35), 'alt': 'Nai Barghouti speaking in an interview', 'caption': 'Nai Barghouti interviewed by Ahotsa Info, 18 October 2019.'},
      'src': ['nai-barghouti-hong-kong']},
     {'id': 'al-festival', 'desk': 'music', 'state': 'gone', 'fmt': 'gig',
      'title': 'Kamilya Jubran and Daboor played Berlin’s AL.Festival',

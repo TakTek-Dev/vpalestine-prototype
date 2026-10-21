@@ -34,8 +34,44 @@ USE = {
     'alhambra-jaffa': (None, 1920),
     'cinema-jenin': ('File:Cinema front 1.jpg', 500),
     'bakri': ('File:Mohammad Bakri.jpg', 1280),
+    # venues and people for the inner pages and the stories that had none
+    'mfa': ('prefix:File:Museum of Fine Arts Boston', 1280),
+    'brattle': ('File:BrattleTheatreC.JPG', 1280),
+    'lightbox': ('File:Lightbox 2010-09-11 I.JPG', 1280),
+    'elgouna': ('File:El Gouna R13.jpg', 1280),
+    'jacir': ('File:Annemarie Jacir at TIFF 2025.jpg', 1280),
+    'rami-alayan': ('prefix:File:MMXXIII Mostra de Val', 1280),
+    'ica': ('prefix:File:The Institute of Contemporary Arts', 960),
+    'curzon-mayfair': ('File:Curzon Cinema Mayfair, June 2023.jpg', 1280),
+    'festsaal': ('prefix:File:20230916 xl 1534-Festsaal', 1280),
+    'daboor': ('File:Daboor.jpg', 960),
+    'kasaba': ('prefix:File:Théâtre Al-Kasaba', 1280),
+    'rim-banna': ('prefix:File:Rim Banna', 1280),
+    'barbican': ('File:Barbican Centre tower.jpg', 1280),
+    'quad': ('File:Quad Cinema W 13 St 2014-03-08 jeh.jpg', 1280),
+    'said-barenboim': ('File:Edward Said and Daniel Barenboim in Sevilla, 2002.jpg', 1280),
+    'saleh-bakri': ('File:Saleh Bakri at TIFF 2025.jpg', 1280),
+    # second photo round (research/photos2.json)
+    'aljafari': ('File:Director Kamal Aljafari at the 2025 Locarno Film Festival 00.jpg', 1280),
+    'mayasi': ('File:Rakan Mayasi 8966M.jpg', 1280),
+    'nai': ('prefix:File:Nai Barghouti (born 1996)', 960),
+    'saint-levant-live': ('File:Saint Levant.jpg', 1280),
+    'bfi': ('File:BFI Southbank Dec 2021.jpg', 1280),
+    'barbican-cinema': ('File:Barbican Foyer.JPG', 1280),
+    'onassis': ('File:Main Stage of the Onassis Cultural Centre (10).jpg', 1280),
+    'emst': ('File:20211105 athenes228.jpg', 1280),
+    'baird': ('File:Maiken Baird - Headshot.jpg', 960),
+    'said': ('prefix:File:Edward Said and Daniel Barenboim in Sevilla, 2002 (Said)', 960),
+    'jacir2': ('File:Annemarie Jacir (3).jpg', 1280),
+    'eltahri': ('prefix:File:Jihan El-Tahri at the 2025 Locarno Film Festival (cropped)', 1280),
+    'rio': ('File:The RIO Cinema Dalston.jpg', 1280),
+    'riverside': ('File:Riverside Studios (48243327676).jpg', 1280),
+    'ica2': ('File:Institute of Contemporary Arts - 17 May 2026.jpg', 1280),
+    'cine-lumiere': ('prefix:File:The French Institute, Queensbury Place', 1280),
+    'bertha': ('File:Brunswick Centre, September 2016 01.jpg', 1280),
 }
 PREFIX = {'alkhatib': 'File:Abdallah Alkhatib at Berlin', 'faraj': 'File:Faraj suleiman artist womex19', 'alhambra-jaffa': 'File:Jaffa. Alhambra Cinema'}
+EXTRA = {}  # slug -> (file, need) from research/photos2.json, filled in tools/photos_extra.py
 
 
 def api(title, width):
@@ -63,36 +99,44 @@ def fetch(url):
 
 
 def main():
-    research = {p['file']: p for p in json.load(open(os.path.join(ROOT, 'research', 'photos.json'), encoding='utf-8'))}
+    research = {}
+    for name in ('photos.json', 'photos2.json'):
+        path = os.path.join(ROOT, 'research', name)
+        if os.path.exists(path):
+            research.update({p['file']: p for p in json.load(open(path, encoding='utf-8'))})
+    cache_path = os.path.join(ROOT, 'tools', 'out', 'photos.json')
+    cache = json.load(open(cache_path, encoding='utf-8')) if os.path.exists(cache_path) else {}
     credits, meta = [], {}
     only = set(sys.argv[1:])
-    for slug, (title, need) in USE.items():
+    for slug, (title, need) in {**USE, **EXTRA}.items():
         if title is None:
             title = next(f for f in research if f.startswith(PREFIX[slug]))
+        elif title.startswith('prefix:'):
+            title = next(f for f in research if f.startswith(title[7:]))
         r = research[title]
         out = os.path.join(OUT, slug + '.webp')
-        page = api(title, 1280)
-        ii = page['imageinfo'][0]
-        w0, h0 = ii['width'], ii['height']
-        width = next((s for s in STANDARD if s >= need), STANDARD[-1])
-        if max(w0, h0) <= width or w0 <= width:
-            url = ii['url']
-        else:
-            url = api(title, width)['imageinfo'][0]['thumburl']
-        if not (only and slug not in only) and not os.path.exists(out):
+        if not os.path.exists(out) and not (only and slug not in only):
+            page = api(title, 1280)
+            ii = page['imageinfo'][0]
+            w0, h0 = ii['width'], ii['height']
+            width = next((s for s in STANDARD if s >= need), STANDARD[-1])
+            url = ii['url'] if (max(w0, h0) <= width or w0 <= width) else api(title, width)['imageinfo'][0]['thumburl']
             img = Image.open(io.BytesIO(fetch(url)))
             img = ImageOps.exif_transpose(img).convert('L')
             img = ImageOps.autocontrast(img, cutoff=1)
-            img.save(out, 'WEBP', quality=80, method=6)
+            img.thumbnail((1200, 1200), Image.LANCZOS)
+            img.save(out, "WEBP", quality=74, method=6)
             print(slug, img.size, os.path.getsize(out) // 1024, 'KB')
             time.sleep(4)
+        if not os.path.exists(out):
+            continue
         im = Image.open(out)
         meta[slug] = {'w': im.size[0], 'h': im.size[1], 'file': title, 'author': r['author'], 'license': r['license'],
                       'license_url': r.get('license_url', ''), 'page': r['page_url'], 'date': r.get('date', ''),
                       'place': r.get('place', ''), 'description': r.get('description', '')}
         credits.append(f"- `{slug}.webp` — [{title[5:]}]({r['page_url']}) · {r['author']} · {r['license']} · "
                        f"{r.get('date', '')} · grayscale, levels set, printed as a halftone on the site")
-    json.dump(meta, open(os.path.join(ROOT, 'tools', 'out', 'photos.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    json.dump(meta, open(cache_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     open(os.path.join(OUT, 'CREDITS.md'), 'w', encoding='utf-8').write(
         '# Photo credits\n\nAll photographs from Wikimedia Commons, used under the licences below. None is a film still or poster; '
         'each is captioned on the site with its real date and place.\n\n' + '\n'.join(credits) + '\n')
